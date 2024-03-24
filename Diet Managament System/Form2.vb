@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Text
+Imports MySql.Data.MySqlClient
 
 Public Class Form2
 
@@ -90,6 +91,36 @@ Public Class Form2
         End Using
 
         MessageBox.Show("Diet plan added successfully.")
+    End Sub
+
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        Me.Hide()
+        Form3.Show()
+    End Sub
+
+    Private Sub Guna2Button6_Click(sender As Object, e As EventArgs) Handles Guna2Button6.Click
+        ' Retrieve data from the "userdp" table
+        Dim connectionString As String = "server=localhost;user=root;password=admin;database=dms;"
+        Dim query As String = "SELECT * FROM userdp"
+
+        Dim userData As New StringBuilder()
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                connection.Open()
+                Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                While reader.Read()
+                    ' Append userdp data to StringBuilder
+                    userData.AppendLine($"userdpid: {reader("userdpid")}, userid: {reader("userid")}, planid: {reader("planid")}, startdate: {reader("startdate")}, enddate: {If(reader("enddate") IsNot DBNull.Value, reader("enddate"), "NULL")}")
+                End While
+
+                reader.Close()
+            End Using
+        End Using
+
+        ' Display userdp data in MessageBox
+        MessageBox.Show(userData.ToString(), "User Diet Plans")
     End Sub
 
 End Class
