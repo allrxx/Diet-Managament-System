@@ -8,6 +8,7 @@ Public Class Form2
         LoadMedicalConditionComboBox()
         Guna2GroupBox2.Visible = False
         Guna2GroupBox3.Visible = False
+        Guna2GroupBox4.Visible = False
     End Sub
 
     Private Sub LoadGenderComboBox()
@@ -47,5 +48,48 @@ Public Class Form2
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Guna2GroupBox3.Visible = True
+
+        ' Call a method to load data into Guna2DataGridView1
+        LoadUserData()
     End Sub
+
+    Private Sub LoadUserData()
+        Dim connectionString As String = "server=localhost;user=root;password=admin;database=dms;"
+        Dim query As String = "SELECT * FROM user"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                Dim dataTable As New DataTable()
+                Dim dataAdapter As New MySqlDataAdapter(command)
+
+                ' Fill the DataTable with data from the database
+                dataAdapter.Fill(dataTable)
+
+                ' Bind the DataTable to the Guna2DataGridView1
+                Guna2DataGridView1.DataSource = dataTable
+            End Using
+        End Using
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Guna2GroupBox4.Visible = True
+    End Sub
+
+    Private Sub Guna2Button7_Click(sender As Object, e As EventArgs) Handles Guna2Button7.Click
+        Dim connectionString As String = "server=localhost;user=root;password=admin;database=dms;"
+        Dim query As String = "INSERT INTO diet_plan (Planname, Description) VALUES (@Planname, @Description)"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Planname", Guna2TextBox10.Text)
+                command.Parameters.AddWithValue("@Description", Guna2TextBox9.Text)
+
+                connection.Open()
+                command.ExecuteNonQuery()
+            End Using
+        End Using
+
+        MessageBox.Show("Diet plan added successfully.")
+    End Sub
+
 End Class
