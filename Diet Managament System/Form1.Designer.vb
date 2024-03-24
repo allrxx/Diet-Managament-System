@@ -52,7 +52,7 @@ Partial Class Form1
         Guna2PictureBox1.CustomizableEdges = CustomizableEdges7
         Guna2PictureBox1.Image = My.Resources.Resources.diet_women_3d_vector_art_3d_render
         Guna2PictureBox1.ImageRotate = 0F
-        Guna2PictureBox1.Location = New Point(12, 12)
+        Guna2PictureBox1.Location = New Point(12, 11)
         Guna2PictureBox1.Name = "Guna2PictureBox1"
         Guna2PictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2PictureBox1.Size = New Size(484, 479)
@@ -72,13 +72,13 @@ Partial Class Form1
         Guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         Guna2TextBox1.Font = New Font("Segoe UI", 9F)
         Guna2TextBox1.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        Guna2TextBox1.Location = New Point(552, 197)
+        Guna2TextBox1.Location = New Point(567, 197)
         Guna2TextBox1.Name = "Guna2TextBox1"
         Guna2TextBox1.PasswordChar = ChrW(0)
         Guna2TextBox1.PlaceholderText = ""
         Guna2TextBox1.SelectedText = ""
         Guna2TextBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        Guna2TextBox1.Size = New Size(318, 38)
+        Guna2TextBox1.Size = New Size(283, 38)
         Guna2TextBox1.TabIndex = 1
         Guna2TextBox1.TextAlign = HorizontalAlignment.Center
         ' 
@@ -94,13 +94,13 @@ Partial Class Form1
         Guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         Guna2TextBox2.Font = New Font("Segoe UI", 9F)
         Guna2TextBox2.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        Guna2TextBox2.Location = New Point(552, 252)
+        Guna2TextBox2.Location = New Point(567, 252)
         Guna2TextBox2.Name = "Guna2TextBox2"
         Guna2TextBox2.PasswordChar = ChrW(0)
         Guna2TextBox2.PlaceholderText = ""
         Guna2TextBox2.SelectedText = ""
         Guna2TextBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2TextBox2.Size = New Size(318, 38)
+        Guna2TextBox2.Size = New Size(283, 38)
         Guna2TextBox2.TabIndex = 2
         Guna2TextBox2.TextAlign = HorizontalAlignment.Center
         ' 
@@ -125,10 +125,10 @@ Partial Class Form1
         Guna2Button1.FillColor = Color.FromArgb(CByte(0), CByte(151), CByte(132))
         Guna2Button1.Font = New Font("Segoe UI", 9F)
         Guna2Button1.ForeColor = Color.White
-        Guna2Button1.Location = New Point(569, 314)
+        Guna2Button1.Location = New Point(583, 314)
         Guna2Button1.Name = "Guna2Button1"
         Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Button1.Size = New Size(285, 38)
+        Guna2Button1.Size = New Size(252, 38)
         Guna2Button1.TabIndex = 4
         Guna2Button1.Text = "Login"
         ' 
@@ -137,7 +137,7 @@ Partial Class Form1
         AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(69), CByte(173), CByte(138))
-        ClientSize = New Size(920, 501)
+        ClientSize = New Size(920, 500)
         Controls.Add(Guna2Button1)
         Controls.Add(Label1)
         Controls.Add(Guna2TextBox2)
